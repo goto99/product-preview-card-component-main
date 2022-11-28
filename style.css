@@ -1,0 +1,137 @@
+
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+    --border-radius: 0.5rem;
+	--font-serif: 'Fraunces', serif;
+	--font-sans: 'Montserrat', sans-serif;
+}
+*{
+	box-sizing: border-box;
+}
+body {
+    background-color: var(--cream);
+	/* use the following 3 line codes to center the content. */
+	min-height: 100vh;
+	display: grid;
+	place-content: center;
+	margin: 2rem;
+}
+
+.content{
+	display: flex;
+}
+
+@media(min-width: 360px) and (max-width: 767.9px){
+	/* For mobile */
+	.content{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	#img-desktop{
+		display: none;
+	}
+	#img-mobile{
+		border-top-left-radius: var(--border-radius);
+		border-top-right-radius: var(--border-radius);
+	}
+	#desc-container{
+		border-bottom-left-radius: var(--border-radius);
+		border-bottom-right-radius: var(--border-radius);
+	}
+}
+
+@media(min-width: 768px){
+	/* For PC */
+	.content{
+		flex-direction: row;
+		align-items: baseline;
+	}
+	#img-mobile{
+		display: none;
+	}
+	#img-desktop{
+		border-top-left-radius: var(--border-radius);
+		border-bottom-left-radius: var(--border-radius);
+	}
+	#desc-container{
+		border-bottom-right-radius: var(--border-radius);
+		border-top-right-radius: var(--border-radius);
+	}
+}
+
+#img-container {
+    float: left;
+	border: none;
+}
+
+#desc-container {
+	display: flex;
+	flex-direction: column;
+	float: left;
+    max-width: 22.8125rem;
+    flex-direction: column;
+    background-color: var(--white);
+	border: none;
+}
+
+#subtitle{
+	flex: 1
+    font-size: 1.5rem;
+    font-family: var(--font-sans);	
+	text-transform: uppercase;
+	margin: 1.5rem 2rem 1rem 2rem;
+}
+
+h1 {
+	flex: 3;
+	margin: .5rem 2rem 1rem 2rem;
+    font-family: var(--font-serif);
+	font-weight: 700;
+	font-size: 2rem;
+}
+
+#desc {
+	flex: 3;
+    font-size: 1rem;
+    font-family: var(--font-sans);
+	line-height: 1.5rem;
+	margin: .5rem .5rem 1rem 2rem;
+}
+
+#price{
+	flex:2;
+	margin: .5rem 2rem 1rem 2rem;
+    font-family: var(--font-serif);	
+	vertical-align: middle;
+}
+
+#c-price {
+    color: var(--dark-cyan);)
+    font-weight:700;
+    font-size:2rem;
+}
+
+#o-price {
+    text-decoration: line-through;
+	font-size: 0.8rem;
+}
+#btn {
+    background-color: var(--dark-cyan);
+    color: var(--white);
+    border: none;
+	line-height: 3rem;
+	margin: .5rem 2rem 2rem 2rem;
+	text-align: center;
+	border-radius: .5rem;
+}
+#btn:active{
+	background-color: var(--very-dark-blue);
+}
+
+.attribution {
+    display: none;
+}
